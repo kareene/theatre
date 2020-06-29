@@ -15,13 +15,30 @@
         border-radius: 0.25rem;
         padding: 2rem;
         text-align: center;
+        .selected-seats {
+            margin-bottom: 0.5rem;
+            max-height: 10rem;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+            &::-webkit-scrollbar-track {
+                border-radius: 6px;
+                background-color: $clr5;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+                border: 1px solid $clr5;
+                background-color: $clr7;
+            }
+        }
         .seat-info {
             font-family: OpenSans-Bold;
             span {
                 color: $clr1;
             }
         }
-        p:last-of-type {
+        & > p:last-of-type {
             margin-bottom: 1rem;
         }
         button:not(:last-of-type) {
