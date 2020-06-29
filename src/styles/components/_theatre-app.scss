@@ -1,0 +1,21 @@
+.theatre-app {
+    background-color: $clr7;
+    border: 1px solid $clr8;
+    width: fit-content;
+    padding: 1.6rem;
+    margin: 3rem auto 0 auto;
+    .theatre {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-color: $clr2;
+        padding: 0 1rem 2rem 1rem;
+        .screen {
+            background-color: $clr1;
+            color: $clr7;
+            text-align: center;
+            padding: 0.8rem 0;
+            width: 75%;
+            margin: 0 auto 2.8rem auto;
+        }
+    }
+}

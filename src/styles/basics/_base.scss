@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: OpenSans, sans-serif;
+    color: $clr3;
+    line-height: 1.6;
+}
+
+body {
+    background-color: $clr6;
+}
+
+body, p {
+    margin: 0;
+}
+
+img {
+    width: 100%
+}
+
+.primary-button {
+    @include clear-button;
+    background-color: $clr1;
+    color: $clr7;
+    font-family: OpenSans-Bold;
+    padding: 0.25rem 0.5rem;
+    border: 2px solid $clr1;
+    border-radius: 0.25rem;
+    &:hover {
+        background-color: $clr7;
+        color: $clr1;
+    }
+}
+
+.secondary-button {
+    @include clear-button;
+    color: $clr1;
+    font-family: OpenSans-Bold;
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,31 @@
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($clr3, 0.4);
+    .modal {
+        position: absolute;
+        top: 10rem;
+        right: 50%;
+        transform: translate(50%);
+        background-color: $clr7;
+        border: 1px solid $clr8;
+        border-radius: 0.25rem;
+        padding: 2rem;
+        text-align: center;
+        .seat-info {
+            font-family: OpenSans-Bold;
+            span {
+                color: $clr1;
+            }
+        }
+        p:last-of-type {
+            margin-bottom: 1rem;
+        }
+        button:not(:last-of-type) {
+            margin-right: 0.8rem;
+        }
+    }
+}

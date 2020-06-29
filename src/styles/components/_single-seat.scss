@@ -1,0 +1,17 @@
+.single-seat {
+    margin: 0.16rem;
+    border-radius: 0.25rem;
+    &.available {
+        background-color: $clr5;
+        cursor: pointer;
+        &:hover, &.active {
+            opacity: 0.7;
+        }
+    }
+    &.reserved {
+        background-color: $clr4;
+    }
+    &.selected {
+        background-color: $clr1;
+    }
+}

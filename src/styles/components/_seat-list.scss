@@ -1,0 +1,5 @@
+.seat-list {
+    display: grid;
+    grid-template-columns: repeat(28, 2rem);
+    grid-auto-rows: 2rem;
+}

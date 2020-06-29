@@ -1,0 +1,27 @@
+.seat-legend {
+    display: flex;
+    justify-content: flex-start;
+    section {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+        div {
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 0.25rem;
+            margin-right: 0.8rem;
+            &.available {
+                background-color: $clr5;
+            }
+            &.reserved {
+                background-color: $clr4;
+            }
+            &.selected {
+                background-color: $clr1;
+            }
+        }
+    }
+}
