@@ -5,10 +5,10 @@
             <div class="selected-seats">
                 <p class="seat-info" v-for="seat in seatsToConfirm" :key="seat.id">
                     {{seat.id}}
-                    <span>{{price(seat.price)}}</span>
+                    <span>{{seat.price | formatPrice}}</span>
                 </p>
             </div>
-            <p v-if="multipleSeats" class="seat-info">Total: <span>{{total}}</span></p>
+            <p v-if="multipleSeats" class="seat-info">Total: <span>{{total | formatPrice}}</span></p>
             <p>Please confirm your selection</p>
             <button @click.stop="$emit('close', true)" class="primary-button">
                 Confirm
@@ -32,19 +32,20 @@ export default {
     destroyed() {
         document.removeEventListener('keyup', this.escapeKeyHandler);
     },
+    filters: {
+        formatPrice(price) {
+            return price.toLocaleString('en-US', { style:'currency', currency:'USD' });
+        }
+    },
     computed: {
         multipleSeats() {
             return this.seatsToConfirm.length > 1;
         },
         total() {
-            const total = this.seatsToConfirm.reduce((sum, seat) => sum + seat.price, 0);
-            return this.price(total);
+            return this.seatsToConfirm.reduce((sum, seat) => sum + seat.price, 0);
         }
     },
     methods: {
-        price(seatPrice) {
-            return seatPrice.toLocaleString('en-US', { style:'currency', currency:'USD' });
-        },
         escapeKeyHandler(ev) {
             if (ev.keyCode === 27) {
                 this.$emit('close', false);
